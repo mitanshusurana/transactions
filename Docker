@@ -26,4 +26,4 @@ RUN ./gradlew build --no-daemon
 EXPOSE 8080
 
 # Command to run the application
-CMD ["java", "-jar", "build/libs/your-app.jar"]  # Adjust the jar name as necessary
+CMD ["java", "-jar", "build/libs/transaction.jar"]  # Adjust the jar name as necessary
