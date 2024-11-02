@@ -25,5 +25,7 @@ RUN ./gradlew build --no-daemon
 # Expose the port the app runs on
 EXPOSE 8080
 
+RUN find build/libs -name "*.jar" -exec echo "JAR file generated at: {}" \;
+
 # Command to run the application
 CMD ["java", "-jar", "build/libs/transaction.jar"]  # Adjust the jar name as necessary
