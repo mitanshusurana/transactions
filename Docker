@@ -1,0 +1,23 @@
+# Use the official OpenJDK image with Java 23
+FROM openjdk:23-jdk-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the Gradle build files
+COPY build.gradle settings.gradle ./
+# Copy the Gradle wrapper files (if using Gradle wrapper)
+COPY gradle gradle
+COPY gradlew ./
+
+# Copy the entire project
+COPY . .
+
+# Install any dependencies and build the application
+RUN ./gradlew build --no-daemon
+
+# Expose the port the app runs on
+EXPOSE 8080
+
+# Command to run the application
+CMD ["java", "-jar", "build/libs/your-app.jar"]  # Adjust the jar name as necessary
