@@ -26,6 +26,10 @@ public class TransactionService {
         return transactionRepository.findByDate(LocalDate.parse(date));
     }
 
+    public List<Transaction> getTransactionsByName(String name) {
+        return transactionRepository.findByledgerName(name);
+    }
+
     public void deleteTransaction(String id) {
         transactionRepository.deleteById(id);
     }

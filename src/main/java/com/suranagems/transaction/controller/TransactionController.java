@@ -30,6 +30,11 @@ public class TransactionController {
         return transactionService.getTransactionsByDate(date);
     }
 
+    @GetMapping("/name")
+    public List<Transaction> getTransactionsByName(@RequestParam("name") String name) {
+        return transactionService.getTransactionsByName(name);
+    }
+
     @DeleteMapping()
     public void deleteTransaction(@RequestParam("id") String id){
         transactionService.deleteTransaction(id);

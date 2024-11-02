@@ -9,9 +9,8 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-
         registry.addMapping("/api/**") // Apply CORS to URLs starting with /api/
-                .allowedOrigins("*") // Allow all origins temporarily
+                .allowedOrigins("*") // Your Angular app's origin
                 .allowedMethods("GET", "POST", "PUT", "DELETE");
     }
 }
