@@ -20,9 +20,11 @@ public class LedgerService {
     }
 
     public List<String> getCustomers() {
-        List<CreateCustomer> customers=ledgerRepository.findLedgerNameBy();
+        List<CreateCustomer> customers = ledgerRepository.findLedgerNameBy();
         return customers.stream()
-                .map(CreateCustomer::getCustomerName) // Extract ledgerName
+                .map(customer -> customer.getCustomerName().toUpperCase()) // Convert to uppercase
+                .sorted()
+                .distinct() // Ensure unique names
                 .collect(Collectors.toList());
     }
 
