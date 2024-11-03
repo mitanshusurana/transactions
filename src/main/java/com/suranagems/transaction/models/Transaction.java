@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public class Transaction {
     @Id
     private String id;
-    private LocalDate date;
+    private String date;
     private String transaction;
     private String ledgerName;
     private String stockName;

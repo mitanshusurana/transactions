@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface TransactionRepository extends MongoRepository<Transaction, String> {
 
-    List<Transaction> findByDate(LocalDate date);
+    List<Transaction> findByDate(String date);
     List<Transaction> findByledgerName(String name);
 }
